@@ -16,7 +16,33 @@
     <title>TheCocktailDB</title>
   </head>
   <body>
-    <h1>TheCocktailDB api</h1>
+    <div class="mx-auto">
+      <img src="./images/logo.png" alt="" />
+    </div>
+    <!-- Search Input -->
+    <div class="input-group mb-3 w-50 mx-auto">
+      <input
+        id="search-field"
+        type="text"
+        class="form-control"
+        placeholder="Search For a Cocktail"
+        aria-label="Recipient's username"
+        aria-describedby="button-addon2"
+      />
+      <button
+        onclick="searchCocktail()"
+        class="btn btn-outline-info"
+        type="button"
+        id="search-button"
+      >
+        Search
+      </button>
+    </div>
+
+    <div  class="container">
+      <div id="cocktails" class="row row-cols-1 row-cols-md-3 g-4">
+      </div>
+    </div>
 
     <!-- Bootstrap javascript cdn -->
     <script
