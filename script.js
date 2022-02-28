@@ -1,6 +1,8 @@
 const searchCocktail = () => {
   const searchField = document.getElementById("search-field");
   const searchText = searchField.value;
+  searchField.value = "";
+  searchField.textContent = "";
   const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchText}`;
   fetch(url)
     .then((response) => response.json())
@@ -9,12 +11,11 @@ const searchCocktail = () => {
 
 const displayCocktail = (cocktails) => {
   //   console.log(cocktails);
-
   cocktails.forEach((cocktail) => {
     const { strDrink, strDrinkThumb, idDrink } = cocktail;
-
     //     console.log(cocktail);
     const cocktails = document.getElementById("cocktails");
+    cocktails.textContent = "";
     const div = document.createElement("div");
     div.classList.add("col");
     div.innerHTML = `
@@ -45,6 +46,7 @@ const displayCocktailDetails = (drinks) => {
   const { strDrinkThumb, strDrink, strInstructions } = drinks;
 
   const cocktailDetails = document.getElementById("cocktail-details");
+  cocktailDetails.textContent = "";
   const div = document.createElement("div");
   div.classList.add("card");
   div.innerHTML = `
